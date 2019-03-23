@@ -9,6 +9,10 @@
 #ifndef PORT_H_
 #define PORT_H_
 
-void writePortA(unsigned char pos, unsigned char data);
+#include <stdint.h>
+
+void writePortA( uint8_t pos, uint8_t data );
+
+void writePortC( uint8_t pos, uint8_t data );
 
 #endif /* PORT_H_ */

@@ -6,7 +6,7 @@
  * @param[in] pos - 0-7 the position of the bit in Port A
  * @param[in] data - 1 or 0. The value of the bit to write to Port A
  */
-void writePortA( unsigned char pos, unsigned char data )
+void writePortA( uint8_t pos, uint8_t data )
 {
 	pos = pos & 7;
 	unsigned char value = PORTA;
@@ -20,11 +20,11 @@ void writePortA( unsigned char pos, unsigned char data )
  * @param[in] pos - 0-7 the position of the bit in Port C
  * @param[in] data - 1 or 0. The value of the bit to write to Port C
  */
-void writePortC( uint8_t pos, uint8_t val )
+void writePortC( uint8_t pos, uint8_t data )
 {
-	val &= 0x1;
+	data &= 0x1;
 	uint8_t prev = PORTC;
 	prev &= ~(1 << pos);
-	prev |= val << pos;
+	prev |= data << pos;
 	PORTC = prev;
 }
